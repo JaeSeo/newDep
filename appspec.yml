@@ -1,0 +1,14 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /var/www/
+hooks:
+  BeforeInstall:
+    - location: /var/www/install_dependencies
+      timeout: 300
+      runas: root
+  AfterInstall:
+    - location: /var/www/start
+      timeout: 300
+      runas: root
