@@ -2,13 +2,13 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /var/www/
+    destination: /home/ec2-user
 hooks:
   BeforeInstall:
-    - location: /var/www/install_dependencies
+    - location: /deploy/before.sh
       timeout: 300
       runas: root
   AfterInstall:
-    - location: /var/www/start
+    - location: /deploy/start.sh
       timeout: 300
       runas: root
