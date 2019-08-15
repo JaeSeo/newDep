@@ -5,10 +5,10 @@ files:
     destination: /home/ec2-user
 hooks:
   BeforeInstall:
-    - location: /deploy/before.sh
+    - location: deploy/before.sh
       timeout: 300
       runas: root
   AfterInstall:
-    - location: /deploy/start.sh
+    - location: deploy/start.sh
       timeout: 300
       runas: root
