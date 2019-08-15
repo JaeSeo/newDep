@@ -12,3 +12,9 @@ hooks:
     - location: deploy/start.sh
       timeout: 300
       runas: root
+permissions:
+  - object: /home/ec2-user/deploy
+    pattern: "**"
+    mode: 777
+    type:
+      - file 
