@@ -14,7 +14,11 @@ hooks:
       runas: root
 permissions:
   - object: /home/ec2-user/deploy
-    pattern: "**"
-    mode: 777
+    mode: 644
+    acls:
+      - "d:u::rwx"
+      - "d:g::rwx"
+      - "d:o::rwx"
+    owner: ec2-user
     type:
-      - file 
+      - directory
